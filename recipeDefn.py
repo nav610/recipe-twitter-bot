@@ -54,7 +54,7 @@ def makeIngredient(recipe,texts):
 def unpackRecipe(obj): 
 	unpacked = []
 
-	unpacked.append(obj.name.upper())
+	unpacked.append(obj.name)
 	#unpacked.append(obj.author)
 	if obj.size != '': 
 		size = "Serving Size: " + str(obj.size)
