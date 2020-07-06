@@ -44,7 +44,7 @@ for i in random_index:
 	for step in recipe_steps:
 		params = {'status':step}
 		session.post(url, params = params)
-		time.sleep(30)
+		time.sleep(300)
 
 
 
