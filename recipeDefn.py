@@ -54,7 +54,7 @@ def makeIngredient(recipe,texts):
 def unpackRecipe(obj): 
 	unpacked = []
 
-	unpacked.append(obj.name)
+	unpacked.append(obj.name.upper())
 	#unpacked.append(obj.author)
 	if obj.size != '': 
 		size = "Serving Size: " + str(obj.size)
@@ -65,6 +65,15 @@ def unpackRecipe(obj):
 		unpacked.append(line)
 
 	new_list = list(filter(None, unpacked))
+	a, index = len(new_list), 0
+
+	while index < a: 
+		if len(new_list[index]) > 280: 
+			new_list.insert(index+1, new_list[index][280:])
+			new_list[index] = new_list[index][:280]
+			a += 1
+		index += 1
+	
 	return new_list
 
 
